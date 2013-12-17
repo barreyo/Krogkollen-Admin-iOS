@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F04AB1318606E390093AF0A /* KAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F04AB1118606E390093AF0A /* KAMainViewController.m */; };
+		8F04AB1418606E390093AF0A /* KAMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F04AB1218606E390093AF0A /* KAMainViewController.xib */; };
+		8F9FFE68185A714B0013F83B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F9FFE67185A714B0013F83B /* Images.xcassets */; };
+		8F9FFE6D185CFDD70013F83B /* KALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9FFE6C185CFDD70013F83B /* KALoginViewController.m */; };
+		8F9FFE71185E626F0013F83B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE70185E626F0013F83B /* Parse.framework */; };
+		8F9FFE73185E62AA0013F83B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE72185E62AA0013F83B /* AssetsLibrary.framework */; };
+		8F9FFE7C185E62F50013F83B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE74185E62F50013F83B /* CFNetwork.framework */; };
+		8F9FFE7D185E62F50013F83B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE75185E62F50013F83B /* CoreLocation.framework */; };
+		8F9FFE7E185E62F50013F83B /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE76185E62F50013F83B /* libz.1.1.3.dylib */; };
+		8F9FFE7F185E62F50013F83B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE77185E62F50013F83B /* MobileCoreServices.framework */; };
+		8F9FFE80185E62F50013F83B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE78185E62F50013F83B /* QuartzCore.framework */; };
+		8F9FFE81185E62F50013F83B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE79185E62F50013F83B /* Security.framework */; };
+		8F9FFE82185E62F50013F83B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE7A185E62F50013F83B /* StoreKit.framework */; };
+		8F9FFE83185E62F50013F83B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9FFE7B185E62F50013F83B /* SystemConfiguration.framework */; };
 		8FAB842C1858FCB200FEDB64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842B1858FCB200FEDB64 /* Foundation.framework */; };
 		8FAB842E1858FCB200FEDB64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842D1858FCB200FEDB64 /* CoreGraphics.framework */; };
 		8FAB84301858FCB200FEDB64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842F1858FCB200FEDB64 /* UIKit.framework */; };
@@ -15,7 +29,6 @@
 		8FAB843A1858FCB200FEDB64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB84391858FCB200FEDB64 /* main.m */; };
 		8FAB843E1858FCB200FEDB64 /* KAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB843D1858FCB200FEDB64 /* KAAppDelegate.m */; };
 		8FAB84411858FCB200FEDB64 /* Krogkollen_Admin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB843F1858FCB200FEDB64 /* Krogkollen_Admin.xcdatamodeld */; };
-		8FAB84431858FCB200FEDB64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FAB84421858FCB200FEDB64 /* Images.xcassets */; };
 		8FAB844A1858FCB200FEDB64 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB84491858FCB200FEDB64 /* XCTest.framework */; };
 		8FAB844B1858FCB200FEDB64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842B1858FCB200FEDB64 /* Foundation.framework */; };
 		8FAB844C1858FCB200FEDB64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842F1858FCB200FEDB64 /* UIKit.framework */; };
@@ -36,6 +49,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F04AB1018606E390093AF0A /* KAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAMainViewController.h; sourceTree = "<group>"; };
+		8F04AB1118606E390093AF0A /* KAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAMainViewController.m; sourceTree = "<group>"; };
+		8F04AB1218606E390093AF0A /* KAMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAMainViewController.xib; sourceTree = "<group>"; };
+		8F9FFE67185A714B0013F83B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8F9FFE6B185CFDD70013F83B /* KALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KALoginViewController.h; sourceTree = "<group>"; };
+		8F9FFE6C185CFDD70013F83B /* KALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KALoginViewController.m; sourceTree = "<group>"; };
+		8F9FFE70185E626F0013F83B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		8F9FFE72185E62AA0013F83B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8F9FFE74185E62F50013F83B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8F9FFE75185E62F50013F83B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8F9FFE76185E62F50013F83B /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		8F9FFE77185E62F50013F83B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8F9FFE78185E62F50013F83B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8F9FFE79185E62F50013F83B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8F9FFE7A185E62F50013F83B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8F9FFE7B185E62F50013F83B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8FAB84281858FCB200FEDB64 /* Krogkollen Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Krogkollen Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FAB842B1858FCB200FEDB64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8FAB842D1858FCB200FEDB64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,7 +77,6 @@
 		8FAB843C1858FCB200FEDB64 /* KAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAAppDelegate.h; sourceTree = "<group>"; };
 		8FAB843D1858FCB200FEDB64 /* KAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAAppDelegate.m; sourceTree = "<group>"; };
 		8FAB84401858FCB200FEDB64 /* Krogkollen_Admin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Krogkollen_Admin.xcdatamodel; sourceTree = "<group>"; };
-		8FAB84421858FCB200FEDB64 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8FAB84481858FCB200FEDB64 /* Krogkollen AdminTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Krogkollen AdminTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FAB84491858FCB200FEDB64 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8FAB84521858FCB200FEDB64 /* Krogkollen AdminTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Krogkollen AdminTests-Info.plist"; sourceTree = "<group>"; };
@@ -62,10 +90,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9FFE7C185E62F50013F83B /* CFNetwork.framework in Frameworks */,
+				8F9FFE7D185E62F50013F83B /* CoreLocation.framework in Frameworks */,
+				8F9FFE7E185E62F50013F83B /* libz.1.1.3.dylib in Frameworks */,
+				8F9FFE7F185E62F50013F83B /* MobileCoreServices.framework in Frameworks */,
+				8F9FFE80185E62F50013F83B /* QuartzCore.framework in Frameworks */,
+				8F9FFE81185E62F50013F83B /* Security.framework in Frameworks */,
+				8F9FFE82185E62F50013F83B /* StoreKit.framework in Frameworks */,
+				8F9FFE83185E62F50013F83B /* SystemConfiguration.framework in Frameworks */,
 				8FAB842E1858FCB200FEDB64 /* CoreGraphics.framework in Frameworks */,
+				8F9FFE73185E62AA0013F83B /* AssetsLibrary.framework in Frameworks */,
 				8FAB84321858FCB200FEDB64 /* CoreData.framework in Frameworks */,
 				8FAB84301858FCB200FEDB64 /* UIKit.framework in Frameworks */,
 				8FAB842C1858FCB200FEDB64 /* Foundation.framework in Frameworks */,
+				8F9FFE71185E626F0013F83B /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +143,16 @@
 		8FAB842A1858FCB200FEDB64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F9FFE74185E62F50013F83B /* CFNetwork.framework */,
+				8F9FFE75185E62F50013F83B /* CoreLocation.framework */,
+				8F9FFE76185E62F50013F83B /* libz.1.1.3.dylib */,
+				8F9FFE77185E62F50013F83B /* MobileCoreServices.framework */,
+				8F9FFE78185E62F50013F83B /* QuartzCore.framework */,
+				8F9FFE79185E62F50013F83B /* Security.framework */,
+				8F9FFE7A185E62F50013F83B /* StoreKit.framework */,
+				8F9FFE7B185E62F50013F83B /* SystemConfiguration.framework */,
+				8F9FFE72185E62AA0013F83B /* AssetsLibrary.framework */,
+				8F9FFE70185E626F0013F83B /* Parse.framework */,
 				8FAB842B1858FCB200FEDB64 /* Foundation.framework */,
 				8FAB842D1858FCB200FEDB64 /* CoreGraphics.framework */,
 				8FAB842F1858FCB200FEDB64 /* UIKit.framework */,
@@ -117,12 +165,17 @@
 		8FAB84331858FCB200FEDB64 /* Krogkollen Admin */ = {
 			isa = PBXGroup;
 			children = (
+				8F9FFE67185A714B0013F83B /* Images.xcassets */,
 				8FAB843C1858FCB200FEDB64 /* KAAppDelegate.h */,
 				8FAB843D1858FCB200FEDB64 /* KAAppDelegate.m */,
-				8FAB84421858FCB200FEDB64 /* Images.xcassets */,
 				8FAB843F1858FCB200FEDB64 /* Krogkollen_Admin.xcdatamodeld */,
 				8FAB84341858FCB200FEDB64 /* Supporting Files */,
 				8FAB84601858FD1000FEDB64 /* Main.storyboard */,
+				8F9FFE6B185CFDD70013F83B /* KALoginViewController.h */,
+				8F9FFE6C185CFDD70013F83B /* KALoginViewController.m */,
+				8F04AB1018606E390093AF0A /* KAMainViewController.h */,
+				8F04AB1118606E390093AF0A /* KAMainViewController.m */,
+				8F04AB1218606E390093AF0A /* KAMainViewController.xib */,
 			);
 			path = "Krogkollen Admin";
 			sourceTree = "<group>";
@@ -232,9 +285,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9FFE68185A714B0013F83B /* Images.xcassets in Resources */,
+				8F04AB1418606E390093AF0A /* KAMainViewController.xib in Resources */,
 				8FAB84611858FD1000FEDB64 /* Main.storyboard in Resources */,
 				8FAB84381858FCB200FEDB64 /* InfoPlist.strings in Resources */,
-				8FAB84431858FCB200FEDB64 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,8 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F04AB1318606E390093AF0A /* KAMainViewController.m in Sources */,
 				8FAB843E1858FCB200FEDB64 /* KAAppDelegate.m in Sources */,
 				8FAB843A1858FCB200FEDB64 /* main.m in Sources */,
+				8F9FFE6D185CFDD70013F83B /* KALoginViewController.m in Sources */,
 				8FAB84411858FCB200FEDB64 /* Krogkollen_Admin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +430,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/backman/Documents/XCodeProjects/Krogkollen\\ Admin",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Krogkollen Admin/Krogkollen Admin-Prefix.pch";
 				INFOPLIST_FILE = "Krogkollen Admin/Krogkollen Admin-Info.plist";
@@ -387,6 +447,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/backman/Documents/XCodeProjects/Krogkollen\\ Admin",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Krogkollen Admin/Krogkollen Admin-Prefix.pch";
 				INFOPLIST_FILE = "Krogkollen Admin/Krogkollen Admin-Info.plist";
@@ -456,6 +520,7 @@
 				8FAB845C1858FCB200FEDB64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FAB845D1858FCB200FEDB64 /* Build configuration list for PBXNativeTarget "Krogkollen AdminTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +529,7 @@
 				8FAB845F1858FCB200FEDB64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

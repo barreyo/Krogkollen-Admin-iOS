@@ -7,6 +7,7 @@
 //
 
 #import "KAAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation KAAppDelegate
 
@@ -16,10 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [Parse setApplicationId:@"WgLQnilANHpjM3xITq0nM0eW8dByIgDDmxJzf6se"
+                  clientKey:@"9ZK7yjE1NiD244ymDHb8ZpbbWNNv3RuQq7ceEvJc"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 
