@@ -20,25 +20,30 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
 @property BOOL logginIn;
-@property BOOL logoTopState;
+@property BOOL keyboardUp;
 
 @end
 
 @implementation KALoginViewController
 
-- (IBAction)userNameEditingDidBegin:(UITextField *)sender {
+- (IBAction)userNameEditingDidBegin:(UITextField *)sender
+{
     [self animateTextField: sender up: YES];
-    [self animateImageLogo: YES];
+    if (!self.keyboardUp) {
+        [self animateImageLogo: YES];
+    }
 }
 
-- (IBAction)userNameEditingDidEnd:(UITextField *)sender {
+- (IBAction)userNameEditingDidEnd:(UITextField *)sender
+{
     [self animateTextField: sender up: NO];
-    if (!self.logoTopState) {
+    if (!self.keyboardUp) {
         [self animateImageLogo: NO];
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     if (textField.tag == 1) {
         UITextField *passwordTextField = (UITextField *)[self.view viewWithTag:2];
         [passwordTextField becomeFirstResponder];
@@ -86,12 +91,12 @@
 
 - (void) animateImageLogo: (BOOL) up
 {
-    self.topConstraint.constant = up ? 112 : 73;
+    short addAmount = up ? 39 : -39;
+    self.topConstraint.constant += addAmount;
     [self.logoImage setNeedsUpdateConstraints];
     [UIView animateWithDuration:.3 animations:^{
         [self.logoImage layoutIfNeeded];
     }];
-    self.logoTopState = !self.logoTopState;
 }
 
 - (void) animateTextField: (UITextField*) textField up: (BOOL) up
@@ -106,6 +111,32 @@
     [UIView setAnimationDuration: movementDuration];
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
+}
+
+- (BOOL)hasFourInchDisplay {
+    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    self.keyboardUp = YES;
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    self.keyboardUp = NO;
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -130,6 +161,9 @@
     [self.loadingIndicator setHidden:YES];
     self.userNameTextField.delegate = self;
     self.passwordTextField.delegate = self;
+    [self registerForKeyboardNotifications];
+    if ([self hasFourInchDisplay])
+        self.topConstraint.constant += 44;
 }
 
 - (void)didReceiveMemoryWarning
