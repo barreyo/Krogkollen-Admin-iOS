@@ -42,6 +42,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
+                                            <action selector="asdfwgsr:" destination="do3-wR-NW4" eventType="editingDidEnd" id="4w2-Qb-szi"/>
                                             <action selector="userNameEditingDidBegin:" destination="do3-wR-NW4" eventType="editingDidBegin" id="Sfo-O4-8Fd"/>
                                             <action selector="userNameEditingDidEnd:" destination="do3-wR-NW4" eventType="editingDidEnd" id="xrW-UZ-WVD"/>
                                         </connections>
