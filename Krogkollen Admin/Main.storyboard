@@ -42,7 +42,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
-                                            <action selector="asdfwgsr:" destination="do3-wR-NW4" eventType="editingDidEnd" id="4w2-Qb-szi"/>
                                             <action selector="userNameEditingDidBegin:" destination="do3-wR-NW4" eventType="editingDidBegin" id="Sfo-O4-8Fd"/>
                                             <action selector="userNameEditingDidEnd:" destination="do3-wR-NW4" eventType="editingDidEnd" id="xrW-UZ-WVD"/>
                                         </connections>
@@ -100,6 +99,7 @@
                         <outlet property="passwordTextField" destination="ZVQ-zV-BBo" id="5xx-Xi-rgH"/>
                         <outlet property="topConstraint" destination="8bc-Qh-yj8" id="KUH-Id-W0C"/>
                         <outlet property="userNameTextField" destination="Pnf-1k-2Qi" id="aCm-4d-jG7"/>
+                        <segue destination="zfb-30-yNI" kind="modal" identifier="MainViewSegue" modalTransitionStyle="coverVertical" id="fIj-sz-d8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBZ-Qv-fXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-D8-Tda">
-                                <rect key="frame" x="0.0" y="97" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="90" width="320" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.64313727617263794" green="0.91372555494308472" blue="0.41568630933761597" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -129,7 +129,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-CC-ngT">
-                                <rect key="frame" x="0.0" y="167" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="220" width="320" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.97254908084869385" blue="0.44705885648727417" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -139,7 +139,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-7K-Ccu">
-                                <rect key="frame" x="0.0" y="237" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="350" width="320" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.91372555494308472" green="0.47058826684951782" blue="0.40000003576278687" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -149,8 +149,28 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUR-fS-sBg">
+                                <rect key="frame" x="0.0" y="46" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Krogkollen Admin" id="S9T-yn-mFI">
+                                        <barButtonItem key="leftBarButtonItem" title="Logga ut" id="5dO-GH-QCP">
+                                            <connections>
+                                                <segue destination="o55-lw-ks6" kind="unwind" unwindAction="unwindToLogin:" id="R8G-3t-FmT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R15-QZ-a99">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Nuvarande kö: RÖD" id="swj-yI-tSJ"/>
+                                </items>
+                            </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.9647059440612793" green="0.9647059440612793" blue="0.9647059440612793" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Krogkollen Admin" id="PRi-kf-Hvc">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Q39-ck-W0T">
@@ -172,27 +192,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qy0-Zs-0wj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="o55-lw-ks6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1272" y="82"/>
-        </scene>
-        <!--Navigation Controller - Krogkollen Admin-->
-        <scene sceneID="XDO-sy-rMf">
-            <objects>
-                <navigationController title="Krogkollen Admin" automaticallyAdjustsScrollViewInsets="NO" id="5EZ-D2-wEs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="iEb-4M-q0x"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MwR-MB-xJw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zfb-30-yNI" kind="relationship" relationship="rootViewController" id="GmQ-CI-gLI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zzm-3C-sgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="746" y="82"/>
+            <point key="canvasLocation" x="898" y="-123"/>
         </scene>
     </scenes>
     <resources>

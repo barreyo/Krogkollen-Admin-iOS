@@ -71,7 +71,8 @@
         [PFUser logInWithUsernameInBackground:self.userNameTextField.text password:self.passwordTextField.text
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
-
+                                                [self performSelector:@selector(showMainView) withObject:nil afterDelay:5.0];
+                                                [self showMainView];
                                             } else {
                                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Inloggning misslyckades"
                                                                                                 message:@"Fel användarnamn eller lösenord."
@@ -138,6 +139,11 @@
                                                  name:UIKeyboardWillHideNotification object:nil];
     
 }
+
+- (void)showMainView {
+    [self performSegueWithIdentifier:@"MainViewSegue" sender:self];
+}
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");
