@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="do3-wR-NW4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E3200" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="do3-wR-NW4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Login View Controller - Login-->
@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uAw-9o-fCQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2qM-va-aJN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="krogkollen_admin_logo" translatesAutoresizingMaskIntoConstraints="NO" id="M5S-Eh-JPf">
@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PM5-TE-num">
-                                <rect key="frame" x="20" y="186" width="280" height="191"/>
+                                <rect key="frame" x="20" y="274" width="280" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Användarnamn" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-1k-2Qi">
@@ -115,11 +115,11 @@
                         <viewControllerLayoutGuide type="bottom" id="g6g-rr-cvy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GuX-sA-uM8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-D8-Tda">
-                                <rect key="frame" x="0.0" y="64" width="320" height="124"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-D8-Tda">
+                                <rect key="frame" x="0.0" y="64" width="320" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.64313727617263794" green="0.91372555494308472" blue="0.41568630933761597" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -131,8 +131,8 @@
                                     <action selector="updateQueueTime:" destination="zfb-30-yNI" eventType="touchUpInside" id="tAG-Sh-46M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-CC-ngT">
-                                <rect key="frame" x="0.0" y="188" width="320" height="124"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-CC-ngT">
+                                <rect key="frame" x="0.0" y="217" width="320" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.97254908084869385" blue="0.44705885648727417" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -144,8 +144,8 @@
                                     <action selector="updateQueueTime:" destination="zfb-30-yNI" eventType="touchUpInside" id="k5Z-Zw-eIx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-7K-Ccu">
-                                <rect key="frame" x="0.0" y="312" width="320" height="124"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-7K-Ccu">
+                                <rect key="frame" x="0.0" y="371" width="320" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.91372555494308472" green="0.47058826684951782" blue="0.40000003576278687" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -158,20 +158,32 @@
                                     <action selector="updateQueueTime:" destination="zfb-30-yNI" eventType="touchUpInside" id="bn0-Qa-bxF"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R15-QZ-a99">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Nu:" id="swj-yI-tSJ"/>
-                                    <barButtonItem title="INGEN" id="zev-Sa-uim"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="t1V-fA-KyL"/>
-                                    <barButtonItem title="Senaste:" id="iad-aA-o2a"/>
-                                    <barButtonItem title="--:--" id="Fde-oQ-1Ii"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.96470594409999999" green="0.96470594409999999" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="zJF-CC-ngT" firstAttribute="top" secondItem="Zc9-D8-Tda" secondAttribute="bottom" id="5D9-01-qDF"/>
+                            <constraint firstItem="Zc9-D8-Tda" firstAttribute="top" secondItem="9sP-ni-qzM" secondAttribute="bottom" id="5v2-bd-J7H"/>
+                            <constraint firstAttribute="trailing" secondItem="nJ1-7K-Ccu" secondAttribute="trailing" id="Acf-RE-xgZ"/>
+                            <constraint firstItem="zJF-CC-ngT" firstAttribute="leading" secondItem="GuX-sA-uM8" secondAttribute="leading" id="RI2-Dz-j42"/>
+                            <constraint firstItem="nJ1-7K-Ccu" firstAttribute="leading" secondItem="GuX-sA-uM8" secondAttribute="leading" id="UjE-zV-iNn"/>
+                            <constraint firstAttribute="trailing" secondItem="Zc9-D8-Tda" secondAttribute="trailing" id="VMA-Gp-Jmy"/>
+                            <constraint firstItem="zJF-CC-ngT" firstAttribute="top" secondItem="Zc9-D8-Tda" secondAttribute="bottom" id="VbG-02-fcg"/>
+                            <constraint firstItem="g6g-rr-cvy" firstAttribute="top" secondItem="nJ1-7K-Ccu" secondAttribute="bottom" id="YJq-uJ-yfR"/>
+                            <constraint firstAttribute="trailing" secondItem="zJF-CC-ngT" secondAttribute="trailing" id="Ytl-Uk-W6T"/>
+                            <constraint firstItem="nJ1-7K-Ccu" firstAttribute="top" secondItem="zJF-CC-ngT" secondAttribute="bottom" id="lL4-qT-c7r"/>
+                            <constraint firstItem="nJ1-7K-Ccu" firstAttribute="height" secondItem="zJF-CC-ngT" secondAttribute="height" id="qOM-cq-Ud1"/>
+                            <constraint firstItem="nJ1-7K-Ccu" firstAttribute="height" secondItem="Zc9-D8-Tda" secondAttribute="height" id="tOX-0o-bMV"/>
+                            <constraint firstItem="Zc9-D8-Tda" firstAttribute="leading" secondItem="GuX-sA-uM8" secondAttribute="leading" id="u2k-Kf-HXB"/>
+                            <constraint firstItem="nJ1-7K-Ccu" firstAttribute="top" secondItem="zJF-CC-ngT" secondAttribute="bottom" id="z34-bq-enN"/>
+                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Nu:" id="swj-yI-tSJ"/>
+                        <barButtonItem title="INGEN" id="zev-Sa-uim"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="t1V-fA-KyL"/>
+                        <barButtonItem title="Senaste:" id="iad-aA-o2a"/>
+                        <barButtonItem title="--:--" id="Fde-oQ-1Ii"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Krogkollen Admin" id="PRi-kf-Hvc">
                         <barButtonItem key="backBarButtonItem" title="ASdf" id="kTB-XT-5gv"/>
                         <barButtonItem key="leftBarButtonItem" id="Q39-ck-W0T">
@@ -205,13 +217,17 @@
         <!--Navigation Controller-->
         <scene sceneID="fvF-go-9UF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="36M-YX-fUA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="36M-YX-fUA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kXb-f1-jJN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="mCi-Xz-bkL">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="zfb-30-yNI" kind="relationship" relationship="rootViewController" id="rsk-yb-qod"/>
                     </connections>
@@ -227,6 +243,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
