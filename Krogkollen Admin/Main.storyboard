@@ -173,12 +173,16 @@
                         <color key="backgroundColor" red="0.96470594409999999" green="0.96470594409999999" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Krogkollen Admin" id="PRi-kf-Hvc">
+                        <barButtonItem key="backBarButtonItem" title="ASdf" id="kTB-XT-5gv"/>
                         <barButtonItem key="leftBarButtonItem" id="Q39-ck-W0T">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R4G-ob-0MG">
                                 <rect key="frame" x="16" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Logga ut"/>
+                                <connections>
+                                    <segue destination="o55-lw-ks6" kind="unwind" unwindAction="unwindToLogin:" id="s1F-go-2zV"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Info" id="kWB-hF-E6O"/>
@@ -194,6 +198,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qy0-Zs-0wj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="o55-lw-ks6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1425" y="-123"/>
         </scene>

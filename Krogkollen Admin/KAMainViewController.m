@@ -58,6 +58,24 @@
 }
 
 - (void)initInfo {
+    
+    NSString* queueText;
+    int queueValue = [[self.pub objectForKey:@"queueTime"] integerValue];
+    switch (queueValue) {
+        case 1:
+            queueText = @"GRÖN";
+            break;
+        case 2:
+            queueText = @"GUL";
+            break;
+        case 3:
+            queueText = @"RÖD";
+            break;
+        default:
+            queueText = @"INGEN";
+            break;
+    }
+    self.currentQueueText.title = queueText;
     self.lastUpdatedText.title = [self convertEpochTime:[self.pub objectForKey:@"queueTimeLastUpdated"]];
 }
 
@@ -72,7 +90,10 @@
     return [dateFormatter stringFromDate: epochNSDate];
 }
 
-
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
+{
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -91,11 +112,10 @@
         PFQuery *query = [PFQuery queryWithClassName:@"Pub"];
         [query whereKey:@"owner" equalTo:self.currentUser];
         self.pub = [query getFirstObject];
-        NSLog(self.pub.description);
         [self.navBar setTitle:self.currentUser.username];
         [self initInfo];
     } else {
-        // RETURN TO LOGIN
+        [self dismissViewControllerAnimated: YES completion: nil];
     }
 }
 
