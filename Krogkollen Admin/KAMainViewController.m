@@ -27,22 +27,8 @@
 @implementation KAMainViewController
 
 - (IBAction)updateQueueTime:(UIButton *)sender {
-    switch (sender.tag) {
-        case 1:
-            self.currentQueueTime = 1;
-            self.currentQueueText.title = @"GRÖN";
-            break;
-        case 2:
-            self.currentQueueTime = 2;
-            self.currentQueueText.title = @"GUL";
-            break;
-        case 3:
-            self.currentQueueTime = 3;
-            self.currentQueueText.title = @"RÖD";
-            break;
-        default:
-            break;
-    }
+    self.currentQueueTime = sender.tag;
+    [self setQueueText:self.currentQueueTime];
     [self updateInfo];
 }
 
@@ -57,10 +43,8 @@
     [self.pub saveInBackground];
 }
 
-- (void)initInfo {
-    
+- (void) setQueueText: (int) queueValue {
     NSString* queueText;
-    int queueValue = [[self.pub objectForKey:@"queueTime"] integerValue];
     switch (queueValue) {
         case 1:
             queueText = @"GRÖN";
@@ -76,6 +60,11 @@
             break;
     }
     self.currentQueueText.title = queueText;
+}
+
+- (void)initInfo {
+    int queueValue = [[self.pub objectForKey:@"queueTime"] integerValue];
+    [self setQueueText:queueValue];
     self.lastUpdatedText.title = [self convertEpochTime:[self.pub objectForKey:@"queueTimeLastUpdated"]];
 }
 
