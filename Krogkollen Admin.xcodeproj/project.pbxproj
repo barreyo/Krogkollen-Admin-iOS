@@ -24,7 +24,6 @@
 		8FAB842C1858FCB200FEDB64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842B1858FCB200FEDB64 /* Foundation.framework */; };
 		8FAB842E1858FCB200FEDB64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842D1858FCB200FEDB64 /* CoreGraphics.framework */; };
 		8FAB84301858FCB200FEDB64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB842F1858FCB200FEDB64 /* UIKit.framework */; };
-		8FAB84321858FCB200FEDB64 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAB84311858FCB200FEDB64 /* CoreData.framework */; };
 		8FAB84381858FCB200FEDB64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FAB84361858FCB200FEDB64 /* InfoPlist.strings */; };
 		8FAB843A1858FCB200FEDB64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB84391858FCB200FEDB64 /* main.m */; };
 		8FAB843E1858FCB200FEDB64 /* KAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB843D1858FCB200FEDB64 /* KAAppDelegate.m */; };
@@ -100,7 +99,6 @@
 				8F9FFE83185E62F50013F83B /* SystemConfiguration.framework in Frameworks */,
 				8FAB842E1858FCB200FEDB64 /* CoreGraphics.framework in Frameworks */,
 				8F9FFE73185E62AA0013F83B /* AssetsLibrary.framework in Frameworks */,
-				8FAB84321858FCB200FEDB64 /* CoreData.framework in Frameworks */,
 				8FAB84301858FCB200FEDB64 /* UIKit.framework in Frameworks */,
 				8FAB842C1858FCB200FEDB64 /* Foundation.framework in Frameworks */,
 				8F9FFE71185E626F0013F83B /* Parse.framework in Frameworks */,
