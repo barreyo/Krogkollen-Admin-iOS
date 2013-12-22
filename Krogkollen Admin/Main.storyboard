@@ -99,17 +99,17 @@
                         <outlet property="passwordTextField" destination="ZVQ-zV-BBo" id="5xx-Xi-rgH"/>
                         <outlet property="topConstraint" destination="8bc-Qh-yj8" id="KUH-Id-W0C"/>
                         <outlet property="userNameTextField" destination="Pnf-1k-2Qi" id="aCm-4d-jG7"/>
-                        <segue destination="zfb-30-yNI" kind="modal" identifier="MainViewSegue" modalTransitionStyle="coverVertical" id="fIj-sz-d8g"/>
+                        <segue destination="36M-YX-fUA" kind="modal" identifier="MainViewSegue" modalTransitionStyle="coverVertical" id="fIj-sz-d8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBZ-Qv-fXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="275" y="77"/>
         </scene>
-        <!--View Controller - Main-->
+        <!--Main View Controller - Main-->
         <scene sceneID="eYg-SC-mpS">
             <objects>
-                <viewController title="Main" id="zfb-30-yNI" sceneMemberID="viewController">
+                <viewController title="Main" id="zfb-30-yNI" customClass="KAMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9sP-ni-qzM"/>
                         <viewControllerLayoutGuide type="bottom" id="g6g-rr-cvy"/>
@@ -118,79 +118,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-D8-Tda">
-                                <rect key="frame" x="0.0" y="90" width="320" height="130"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-D8-Tda">
+                                <rect key="frame" x="0.0" y="64" width="320" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.64313727617263794" green="0.91372555494308472" blue="0.41568630933761597" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Kort kö">
+                                <state key="normal" title="0 - 15 minuter">
                                     <color key="titleColor" red="1" green="1" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateQueueTime:" destination="zfb-30-yNI" eventType="touchUpInside" id="tAG-Sh-46M"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-CC-ngT">
-                                <rect key="frame" x="0.0" y="220" width="320" height="130"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-CC-ngT">
+                                <rect key="frame" x="0.0" y="188" width="320" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.97254908084869385" blue="0.44705885648727417" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Medellång kö">
+                                <state key="normal" title="15 - 45 minuter">
                                     <color key="titleColor" red="1" green="1" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateQueueTime:" destination="zfb-30-yNI" eventType="touchUpInside" id="k5Z-Zw-eIx"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-7K-Ccu">
-                                <rect key="frame" x="0.0" y="350" width="320" height="130"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-7K-Ccu">
+                                <rect key="frame" x="0.0" y="312" width="320" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.91372555494308472" green="0.47058826684951782" blue="0.40000003576278687" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" red="0.4745098352432251" green="0.90980398654937744" blue="0.74117648601531982" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Lång kö">
+                                <state key="normal" title="Mer än 45 minuter">
                                     <color key="titleColor" red="1" green="1" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateQueueTime:" destination="zfb-30-yNI" eventType="touchUpInside" id="bn0-Qa-bxF"/>
+                                </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUR-fS-sBg">
-                                <rect key="frame" x="0.0" y="46" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Krogkollen Admin" id="S9T-yn-mFI">
-                                        <barButtonItem key="leftBarButtonItem" title="Logga ut" id="5dO-GH-QCP">
-                                            <connections>
-                                                <segue destination="o55-lw-ks6" kind="unwind" unwindAction="unwindToLogin:" id="R8G-3t-FmT"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R15-QZ-a99">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R15-QZ-a99">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Nuvarande kö: RÖD" id="swj-yI-tSJ"/>
+                                    <barButtonItem title="Nu:" id="swj-yI-tSJ"/>
+                                    <barButtonItem title="INGEN" id="zev-Sa-uim"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="t1V-fA-KyL"/>
+                                    <barButtonItem title="Senaste:" id="iad-aA-o2a"/>
+                                    <barButtonItem title="--:--" id="Fde-oQ-1Ii"/>
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.9647059440612793" green="0.9647059440612793" blue="0.9647059440612793" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.96470594409999999" green="0.96470594409999999" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Krogkollen Admin" id="PRi-kf-Hvc">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Q39-ck-W0T">
+                        <barButtonItem key="leftBarButtonItem" id="Q39-ck-W0T">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R4G-ob-0MG">
                                 <rect key="frame" x="16" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Logga ut">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="o55-lw-ks6" kind="unwind" unwindAction="unwindToLogin:" id="a4C-9u-QwJ"/>
-                                </connections>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Logga ut"/>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="kWB-hF-E6O"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="currentQueueText" destination="zev-Sa-uim" id="bcO-55-WL5"/>
+                        <outlet property="greenButton" destination="Zc9-D8-Tda" id="OmQ-uD-7ks"/>
+                        <outlet property="lastUpdatedText" destination="Fde-oQ-1Ii" id="yhV-iJ-M9F"/>
+                        <outlet property="navBar" destination="PRi-kf-Hvc" id="a5t-kL-bth"/>
+                        <outlet property="redButton" destination="nJ1-7K-Ccu" id="dL4-lb-TSF"/>
+                        <outlet property="yellowButton" destination="zJF-CC-ngT" id="WhZ-cd-8Ee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qy0-Zs-0wj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="o55-lw-ks6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="-123"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fvF-go-9UF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="36M-YX-fUA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kXb-f1-jJN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zfb-30-yNI" kind="relationship" relationship="rootViewController" id="rsk-yb-qod"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZr-AZ-6Mq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="-123"/>
         </scene>

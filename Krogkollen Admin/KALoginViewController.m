@@ -7,8 +7,8 @@
 //
 
 #import "KALoginViewController.h"
-#import <Parse/Parse.h>
 #import "KAMainViewController.h"
+#import <Parse/Parse.h>
 
 @interface KALoginViewController ()
 
@@ -25,6 +25,8 @@
 @end
 
 @implementation KALoginViewController
+
+NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
 
 - (IBAction)userNameEditingDidBegin:(UITextField *)sender
 {
@@ -71,7 +73,7 @@
         [PFUser logInWithUsernameInBackground:self.userNameTextField.text password:self.passwordTextField.text
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
-                                                [self performSelector:@selector(showMainView) withObject:nil afterDelay:5.0];
+                                                [self performSelector:@selector(showMainView) withObject:nil afterDelay:1.0];
                                                 [self showMainView];
                                             } else {
                                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Inloggning misslyckades"
@@ -141,9 +143,8 @@
 }
 
 - (void)showMainView {
-    [self performSegueWithIdentifier:@"MainViewSegue" sender:self];
+    [self performSegueWithIdentifier:MAIN_SEGUE_CONSTANT sender:self];
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");

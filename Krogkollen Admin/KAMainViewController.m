@@ -11,20 +11,74 @@
 
 @interface KAMainViewController ()
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
+@property (weak, nonatomic) IBOutlet UIButton *greenButton;
+@property (weak, nonatomic) IBOutlet UIButton *yellowButton;
+@property (weak, nonatomic) IBOutlet UIButton *redButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *lastUpdatedText;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *currentQueueText;
+@property PFUser* currentUser;
+@property PFObject* parseObject;
+@property PFObject* pub;
+@property int currentQueueTime;
+
 @end
 
 @implementation KAMainViewController
 
-- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
-{
-    
+- (IBAction)updateQueueTime:(UIButton *)sender {
+    switch (sender.tag) {
+        case 1:
+            self.currentQueueTime = 1;
+            self.currentQueueText.title = @"GRÖN";
+            break;
+        case 2:
+            self.currentQueueTime = 2;
+            self.currentQueueText.title = @"GUL";
+            break;
+        case 3:
+            self.currentQueueTime = 3;
+            self.currentQueueText.title = @"RÖD";
+            break;
+        default:
+            break;
+    }
+    [self updateInfo];
 }
+
+- (void)updateInfo {
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    [self.pub setObject:[NSNumber numberWithInt:[[NSDate date] timeIntervalSince1970]] forKey:@"queueTimeLastUpdated"];
+    [self.pub setObject:[NSNumber numberWithInt:self.currentQueueTime] forKey:@"queueTime"];
+    self.lastUpdatedText.title = resultString;
+    [self.pub saveInBackground];
+}
+
+- (void)initInfo {
+    self.lastUpdatedText.title = [self convertEpochTime:[self.pub objectForKey:@"queueTimeLastUpdated"]];
+}
+
+- (NSString* )convertEpochTime:(NSString*) time {
+    NSTimeInterval seconds = [time doubleValue];
+
+    NSDate *epochNSDate = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm"];
+    
+    return [dateFormatter stringFromDate: epochNSDate];
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // Custom initialization    
     }
     return self;
 }
@@ -32,7 +86,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.currentUser = [PFUser currentUser];
+    if (self.currentUser) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Pub"];
+        [query whereKey:@"owner" equalTo:self.currentUser];
+        self.pub = [query getFirstObject];
+        NSLog(self.pub.description);
+        [self.navBar setTitle:self.currentUser.username];
+        [self initInfo];
+    } else {
+        // RETURN TO LOGIN
+    }
 }
 
 - (void)didReceiveMemoryWarning
