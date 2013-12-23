@@ -26,7 +26,10 @@
 
 @implementation KALoginViewController
 
-NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
+NSString * const MAIN_SEGUE_CONSTANT        = @"MainViewSegue";
+int const LOGO_MOVE_DISTANCE                = 39;
+int const TEXT_FIELD_MOVE_DISTANCE          = 82;
+float const TEXT_FIELD_ANIMATION_DURATION   = 0.3f;
 
 - (IBAction)userNameEditingDidBegin:(UITextField *)sender
 {
@@ -65,19 +68,25 @@ NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
 - (void) login
 {
     if (self.logginIn == NO) {
-        
         [self.loadingIndicator setHidden:NO];
         [self.loadingIndicator startAnimating];
         [self.loginButton setHidden:YES];
-        
         [PFUser logInWithUsernameInBackground:self.userNameTextField.text password:self.passwordTextField.text
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
-                                                [self performSelector:@selector(showMainView) withObject:nil afterDelay:1.0];
+                                                self.logginIn = NO;
+                                                [self.loginButton setHidden:NO];
+                                                [self.loadingIndicator setHidden:YES];
+                                                [self.loadingIndicator stopAnimating];
+                                                // Reset both field so they're empty if the user logs out.
+                                                [self.userNameTextField setText:@""];
+                                                [self.passwordTextField setText:@""];
+                                                // Present the main view.
+                                                [self performSelector:@selector(showMainView) withObject:nil afterDelay:2.0];
                                                 [self showMainView];
                                             } else {
-                                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Inloggning misslyckades"
-                                                                                                message:@"Fel användarnamn eller lösenord."
+                                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Login_failed_title", nil)
+                                                                                                message:NSLocalizedString(@"Login_failed_body", nil)
                                                                                                delegate:nil
                                                                                       cancelButtonTitle:@"OK"
                                                                                       otherButtonTitles:nil];
@@ -94,7 +103,7 @@ NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
 
 - (void) animateImageLogo: (BOOL) up
 {
-    short addAmount = up ? 39 : -39;
+    short addAmount = up ? LOGO_MOVE_DISTANCE : -LOGO_MOVE_DISTANCE;
     self.topConstraint.constant += addAmount;
     [self.logoImage setNeedsUpdateConstraints];
     [UIView animateWithDuration:.3 animations:^{
@@ -104,14 +113,11 @@ NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
 
 - (void) animateTextField: (UITextField*) textField up: (BOOL) up
 {
-    const int movementDistance = 82;
-    const float movementDuration = 0.3f;
-    
-    int movement = (up ? -movementDistance : movementDistance);
+    int movement = (up ? -TEXT_FIELD_MOVE_DISTANCE : TEXT_FIELD_MOVE_DISTANCE);
     
     [UIView beginAnimations: @"anim" context: nil];
     [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
+    [UIView setAnimationDuration: TEXT_FIELD_ANIMATION_DURATION];
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
 }
@@ -139,7 +145,11 @@ NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
-    
+}
+
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
+{
+    [PFUser logOut];
 }
 
 - (void)showMainView {
@@ -169,6 +179,7 @@ NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
     self.userNameTextField.delegate = self;
     self.passwordTextField.delegate = self;
     [self registerForKeyboardNotifications];
+    // If the screen is of four inch size move the logotype slightly.
     if ([self hasFourInchDisplay])
         self.topConstraint.constant += 44;
 }

@@ -26,19 +26,28 @@
 
 @implementation KAMainViewController
 
+NSString *QUEUE_TIME_STRING                 = @"queueTime";
+NSString *QUEUE_TIME_LAST_UPDATED_STRING    = @"queueTimeLastUpdated";
+NSString *PUB_STRING                        = @"Pub";
+NSString *OWNER_STRING                      = @"Owner";
+NSString *TIME_FORMAT_STRING                = @"hh:mm";
+
 - (IBAction)updateQueueTime:(UIButton *)sender {
+    // The buttons in the view are tagged 1-3, the same as the queue scale.
     self.currentQueueTime = sender.tag;
     [self setQueueText:self.currentQueueTime];
     [self updateInfo];
 }
 
 - (void)updateInfo {
+    // Show update time in the GUI.
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"hh:mm"];
+    [dateFormatter setDateFormat:TIME_FORMAT_STRING];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
-    [self.pub setObject:[NSNumber numberWithInt:[[NSDate date] timeIntervalSince1970]] forKey:@"queueTimeLastUpdated"];
-    [self.pub setObject:[NSNumber numberWithInt:self.currentQueueTime] forKey:@"queueTime"];
+    // Sending epoch time to the server and not the time from above.
+    [self.pub setObject:[NSNumber numberWithInt:[[NSDate date] timeIntervalSince1970]] forKey:QUEUE_TIME_LAST_UPDATED_STRING];
+    [self.pub setObject:[NSNumber numberWithInt:self.currentQueueTime] forKey:QUEUE_TIME_STRING];
     self.lastUpdatedText.title = resultString;
     [self.pub saveInBackground];
 }
@@ -47,41 +56,38 @@
     NSString* queueText;
     switch (queueValue) {
         case 1:
-            queueText = @"GRÖN";
+            queueText = NSLocalizedString(@"Queue_color_green", nil);
             break;
         case 2:
-            queueText = @"GUL";
+            queueText = NSLocalizedString(@"Queue_color_yellow", nil);
             break;
         case 3:
-            queueText = @"RÖD";
+            queueText = NSLocalizedString(@"Queue_color_red", nil);
             break;
         default:
-            queueText = @"INGEN";
+            queueText = NSLocalizedString(@"Queue_no_queue", nil);
             break;
     }
     self.currentQueueText.title = queueText;
 }
 
 - (void)initInfo {
-    int queueValue = [[self.pub objectForKey:@"queueTime"] integerValue];
+    int queueValue = [[self.pub objectForKey:QUEUE_TIME_STRING] integerValue];
     [self setQueueText:queueValue];
-    self.lastUpdatedText.title = [self convertEpochTime:[self.pub objectForKey:@"queueTimeLastUpdated"]];
+    self.lastUpdatedText.title = [self convertEpochTime:[self.pub objectForKey:QUEUE_TIME_LAST_UPDATED_STRING]];
+    [self.navBar setTitle:self.currentUser.username];
 }
 
+// Converts time from 1970 to current time with the correct timezone.
 - (NSString* )convertEpochTime:(NSString*) time {
     NSTimeInterval seconds = [time doubleValue];
 
     NSDate *epochNSDate = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"hh:mm"];
+    [dateFormatter setDateFormat:TIME_FORMAT_STRING];
     
     return [dateFormatter stringFromDate: epochNSDate];
-}
-
-- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
-{
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -93,17 +99,25 @@
     return self;
 }
 
+- (IBAction)unwindToMain:(UIStoryboardSegue *)segue
+{
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.currentUser = [PFUser currentUser];
+    
+    // Check if the current user is logged in.
     if (self.currentUser) {
-        PFQuery *query = [PFQuery queryWithClassName:@"Pub"];
-        [query whereKey:@"owner" equalTo:self.currentUser];
+        // Find the pub corresponding to the user.
+        PFQuery *query = [PFQuery queryWithClassName:PUB_STRING];
+        [query whereKey:OWNER_STRING equalTo:self.currentUser];
         self.pub = [query getFirstObject];
-        [self.navBar setTitle:self.currentUser.username];
+        //Initiate information from the server.
         [self initInfo];
     } else {
+        // Move back to login if the user is not logged in.
         [self dismissViewControllerAnimated: YES completion: nil];
     }
 }

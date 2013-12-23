@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings ( SWEDISH STRINGS )
+  Krogkollen Admin
+
+  Created by Johan Backman on 2013-12-23.
+  Copyright (c) 2013 Livsglädje. All rights reserved.
+*/
+
+"Login_failed_title" = "Inloggning misslyckades";
+"Login_failed_body"  = "Fel användarnamn eller lösenord.";
+"Queue_color_green"  = "GRÖN";
+"Queue_color_yellow" = "GUL";
+"Queue_color_red"    = "RÖD";
+"Queue_no_queue"     = "INGEN";
+"Information_text"   = "Lorem lipsum exde";
+"Username_hint"      = "Användarnamn";
+"Password_hint"      = "Lösenord";
+"Current_queue_text" = "Nu:";
+"Last_updated_text"  = "Senaste:";
+"Login_button_text"  = "Logga in";

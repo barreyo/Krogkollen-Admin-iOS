@@ -33,6 +33,9 @@
 		8FAB84551858FCB200FEDB64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FAB84531858FCB200FEDB64 /* InfoPlist.strings */; };
 		8FAB84571858FCB200FEDB64 /* Krogkollen_AdminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB84561858FCB200FEDB64 /* Krogkollen_AdminTests.m */; };
 		8FAB84611858FD1000FEDB64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FAB84601858FD1000FEDB64 /* Main.storyboard */; };
+		8FB98AE31868561B0097936F /* KAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB98AE11868561B0097936F /* KAInfoViewController.m */; };
+		8FB98AE41868561B0097936F /* KAInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98AE21868561B0097936F /* KAInfoViewController.xib */; };
+		8FB98AE81868D6770097936F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98AE71868D6770097936F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,10 @@
 		8FAB84541858FCB200FEDB64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8FAB84561858FCB200FEDB64 /* Krogkollen_AdminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Krogkollen_AdminTests.m; sourceTree = "<group>"; };
 		8FAB84601858FD1000FEDB64 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8FB98AE01868561B0097936F /* KAInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAInfoViewController.h; sourceTree = "<group>"; };
+		8FB98AE11868561B0097936F /* KAInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAInfoViewController.m; sourceTree = "<group>"; };
+		8FB98AE21868561B0097936F /* KAInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAInfoViewController.xib; sourceTree = "<group>"; };
+		8FB98AE71868D6770097936F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,10 +171,14 @@
 				8FAB843D1858FCB200FEDB64 /* KAAppDelegate.m */,
 				8FAB84341858FCB200FEDB64 /* Supporting Files */,
 				8FAB84601858FD1000FEDB64 /* Main.storyboard */,
+				8FB98AE01868561B0097936F /* KAInfoViewController.h */,
+				8FB98AE11868561B0097936F /* KAInfoViewController.m */,
+				8FB98AE21868561B0097936F /* KAInfoViewController.xib */,
 				8F9FFE6B185CFDD70013F83B /* KALoginViewController.h */,
 				8F9FFE6C185CFDD70013F83B /* KALoginViewController.m */,
 				8F04AB1018606E390093AF0A /* KAMainViewController.h */,
 				8F04AB1118606E390093AF0A /* KAMainViewController.m */,
+				8FB98AE71868D6770097936F /* Localizable.strings */,
 			);
 			path = "Krogkollen Admin";
 			sourceTree = "<group>";
@@ -277,6 +288,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB98AE81868D6770097936F /* Localizable.strings in Resources */,
+				8FB98AE41868561B0097936F /* KAInfoViewController.xib in Resources */,
 				8F9FFE68185A714B0013F83B /* Images.xcassets in Resources */,
 				8FAB84611858FD1000FEDB64 /* Main.storyboard in Resources */,
 				8FAB84381858FCB200FEDB64 /* InfoPlist.strings in Resources */,
@@ -301,6 +314,7 @@
 				8F04AB1318606E390093AF0A /* KAMainViewController.m in Sources */,
 				8FAB843E1858FCB200FEDB64 /* KAAppDelegate.m in Sources */,
 				8FAB843A1858FCB200FEDB64 /* main.m in Sources */,
+				8FB98AE31868561B0097936F /* KAInfoViewController.m in Sources */,
 				8F9FFE6D185CFDD70013F83B /* KALoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
