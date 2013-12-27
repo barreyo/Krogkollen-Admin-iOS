@@ -35,7 +35,7 @@
 		8FAB84611858FD1000FEDB64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FAB84601858FD1000FEDB64 /* Main.storyboard */; };
 		8FB98AE31868561B0097936F /* KAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB98AE11868561B0097936F /* KAInfoViewController.m */; };
 		8FB98AE41868561B0097936F /* KAInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98AE21868561B0097936F /* KAInfoViewController.xib */; };
-		8FB98AE81868D6770097936F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98AE71868D6770097936F /* Localizable.strings */; };
+		8FB98AEB1868DD0E0097936F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98AED1868DD0E0097936F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,10 @@
 		8FB98AE01868561B0097936F /* KAInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAInfoViewController.h; sourceTree = "<group>"; };
 		8FB98AE11868561B0097936F /* KAInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAInfoViewController.m; sourceTree = "<group>"; };
 		8FB98AE21868561B0097936F /* KAInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAInfoViewController.xib; sourceTree = "<group>"; };
-		8FB98AE71868D6770097936F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		8FB98AE91868DC4F0097936F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8FB98AEA1868DC4F0097936F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8FB98AEC1868DD0E0097936F /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8FB98AEE1868DD160097936F /* sv */ = {isa = PBXFileReference; lastKnownFileType = file; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +181,7 @@
 				8F9FFE6C185CFDD70013F83B /* KALoginViewController.m */,
 				8F04AB1018606E390093AF0A /* KAMainViewController.h */,
 				8F04AB1118606E390093AF0A /* KAMainViewController.m */,
-				8FB98AE71868D6770097936F /* Localizable.strings */,
+				8FB98AED1868DD0E0097936F /* Localizable.strings */,
 			);
 			path = "Krogkollen Admin";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				sv,
 			);
 			mainGroup = 8FAB841F1858FCB200FEDB64;
 			productRefGroup = 8FAB84291858FCB200FEDB64 /* Products */;
@@ -288,7 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB98AE81868D6770097936F /* Localizable.strings in Resources */,
+				8FB98AEB1868DD0E0097936F /* Localizable.strings in Resources */,
 				8FB98AE41868561B0097936F /* KAInfoViewController.xib in Resources */,
 				8F9FFE68185A714B0013F83B /* Images.xcassets in Resources */,
 				8FAB84611858FD1000FEDB64 /* Main.storyboard in Resources */,
@@ -342,6 +346,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8FAB84371858FCB200FEDB64 /* en */,
+				8FB98AE91868DC4F0097936F /* sv */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -350,8 +355,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				8FAB84541858FCB200FEDB64 /* en */,
+				8FB98AEA1868DC4F0097936F /* sv */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8FB98AED1868DD0E0097936F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FB98AEC1868DD0E0097936F /* en */,
+				8FB98AEE1868DD160097936F /* sv */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
