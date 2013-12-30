@@ -152,6 +152,9 @@ NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
     [self.loadingIndicator stopAnimating];
     [self.userNameTextField setText:@""];
     [self.passwordTextField setText:@""];
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 - (void)showMainView {
