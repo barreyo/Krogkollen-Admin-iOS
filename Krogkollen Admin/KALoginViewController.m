@@ -142,6 +142,18 @@ NSString * const MAIN_SEGUE_CONSTANT = @"MainViewSegue";
     
 }
 
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
+{
+    [PFUser logOut];
+    // Reset the fields and login indicator
+    self.logginIn = NO;
+    [self.loginButton setHidden:NO];
+    [self.loadingIndicator setHidden:YES];
+    [self.loadingIndicator stopAnimating];
+    [self.userNameTextField setText:@""];
+    [self.passwordTextField setText:@""];
+}
+
 - (void)showMainView {
     [self performSegueWithIdentifier:MAIN_SEGUE_CONSTANT sender:self];
 }
