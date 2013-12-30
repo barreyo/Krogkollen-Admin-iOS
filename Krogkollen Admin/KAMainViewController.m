@@ -30,6 +30,8 @@
     self.currentQueueTime = sender.tag;
     [self setQueueText:self.currentQueueTime];
     [self updateInfo];
+    [self clearNotifications];
+    [self scheduleUpdateReminder];
 }
 
 - (void)updateInfo {
@@ -62,6 +64,14 @@
     self.currentQueueText.title = queueText;
 }
 
+- (void) scheduleUpdateReminder {
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:(60 * 30)];
+    localNotification.alertBody = @"Kötiden har inte uppdaterats på 30 minuter. Uppdatera.";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
+
 - (void)initInfo {
     int queueValue = [[self.pub objectForKey:@"queueTime"] integerValue];
     [self setQueueText:queueValue];
@@ -79,6 +89,11 @@
     return [dateFormatter stringFromDate: epochNSDate];
 }
 
+- (void) clearNotifications {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -86,6 +101,33 @@
         // Custom initialization    
     }
     return self;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // Override point for customization after application launch.
+    
+    // Handle launching from a notification
+    UILocalNotification *locationNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (locationNotification) {
+        // Set icon badge number to zero
+        [self clearNotifications];
+    }
+    
+    return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uppdatera"
+                                                        message:notification.alertBody
+                                                       delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    [self clearNotifications];
 }
 
 - (void)viewDidLoad
